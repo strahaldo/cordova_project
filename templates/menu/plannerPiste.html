@@ -1,0 +1,35 @@
+<ons-navigator title="Navigator" var="myNavigator">
+    <ons-page ng-app="plannerAdmin" ng-controller="adminCtrlPiste">
+        <ons-toolbar class="toolbar-header">
+            <div class="left">
+                <ons-toolbar-button ng-click="app.menu.toggle()">
+                    <ons-icon icon="ion-navicon" size="40px" fixed-width="false" class="icon"></ons-icon>
+                </ons-toolbar-button>
+            </div>
+            <div class="toolbar-center center">Suunnittele harjoitus</div>
+            <div class="right">
+                <ons-toolbar-button>
+                    <ons-icon ui-sref="plannerPiste.add" icon="fa fa-plus" class="icon">
+                    </ons-icon>
+                </ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+        <ons-list style="margin: -1px 0">
+            <ons-list-header style="font-size: larger;">Viimeisimmät suunnitelmat</ons-list-header>
+            <ons-list>
+                <ons-list-item modifier="chevron" class="list-item-container" style="height: 70px;"
+                               ng-class="{even: $even, odd: $odd}"
+                               ng-repeat="plan in selectedCardsPiste track by $index">
+                    <ons-row ui-sref="plannerPiste.planDetail({title : plan.title})">
+                            <ons-col style="color: royalblue;" class="fa fa-folder-open-o fa-lg" width="50px">
+
+                            </ons-col>
+                        <ons-col>
+                            <div class="plan_name" >{{plan.title}}</div>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+            </ons-list>
+        </ons-list>
+    </ons-page>
+</ons-navigator>

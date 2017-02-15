@@ -1,0 +1,341 @@
+.left carousel-control {
+    visibility: visible;
+}
+.right carousel-control {
+    visibility: visibles;
+}
+
+
+// .perus {
+//     display: inline;
+// }
+
+
+/* perus */
+ul.perus {
+    list-style: none;
+    font-size: 0px;
+
+}
+
+
+ul.grid-nav li {
+    display: block;
+    margin: 0 0 5px;
+}
+ul.grid-nav li a {
+    display: block;
+}
+ul.perus {
+    margin-left: -41px;
+    margin-right: 16px;
+}
+ul.perus li {
+    width: 100% !important;
+    margin: 0 0 20px; 
+}
+
+.secBody:empty {
+    display:none;
+}
+
+ul.perus li {
+    display: inline-block;
+    padding: 10px;
+    margin: 0 0 2.5% 2.5%;
+    background: #fff;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    font-size: 1rem;
+    vertical-align: top;
+    box-shadow: 0 0 5px #ddd;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+ul.perus li img {
+    width: 100%; /* max-width */
+    /*height: 220px; */ /* auto */
+    margin: 0 0 10px;
+    border-radius: 15px;
+}
+ul.perus li h2 {
+    margin: 0 0 5px;
+}
+ul.perus li .description{
+    font-size: .9em;
+    line-height: 1.5em;
+    color: #999;
+}
+/* class for 2 columns */
+ul.perus.columns-2 li {
+    width: 47.5%; /* this value + 2.5 should = 50% */
+}
+/* class for 3 columns */
+ul.perus.columns-3 li {
+    width: 30.83%; /* this value + 2.5 should = 33% */
+}
+/* class for 4 columns */
+ul.perus.columns-4 li {
+    width: 22.5%; /* this value + 2.5 should = 25% */
+}
+
+.secBody {
+    font-size: 17px!important;
+}
+
+
+/* Kerho */
+
+
+.list-item-container {
+    line-height: 1;
+    padding: 15px 0px 15px 15px;
+}
+
+
+.thumb_kerho {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    padding: 30px 0;
+    line-height: 1.4;
+    background-color: #33393c;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px;
+    padding-bottom: 16px;
+
+}
+
+.img_kerho{
+    width: 100%;
+    border: 5px solid white;
+    box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 0px 0px;
+    -webkit-box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 0px 0px;
+}
+
+.modalFull {
+    width: 100%;
+    height: 100%;
+}
+
+.modalFullLand {
+    display: inline!important;
+    width: 100%;
+}
+
+.list__item--inset{
+    height: inherit;
+}
+
+.title {
+    text-align: center;
+    font-size: 20px;
+}
+
+.name_kerho {
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-size: 21px;
+    opacity: 0.8;
+    line-height: 1.15;
+
+}
+
+.subtitle_kerho {
+    font-size: 14px;
+    opacity: 0.4;
+    margin-bottom: 6px;
+}
+
+.desc_kerho {
+    display: block;
+    line-height: 1.2;
+    font-size: 18px;
+}
+
+/* Vinki */
+
+.list-item-container {
+    line-height: 1;
+    padding: 15px 0px 15px 15px;
+}
+
+
+.thumbnail_vinki {
+    width: 100%;
+    height: 7px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 900;
+    color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    padding: 30px 0;
+    line-height: 0.4;
+    background-color: royalblue;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px;
+
+}
+
+.thumbnail_vinki_body {
+    line-height: 200%;
+}
+
+.list__item--inset{
+    height: inherit;
+}
+
+.heyyy{
+    margin-top: 18px;
+    margin-bottom: 6px;
+    margin-left: 20px;
+    line-height: 1.5;
+    font-size: 16px;
+
+}
+
+.imgContainer {
+    padding-top: 10px;
+}
+
+.imgContainer img{
+    border-radius: 20px;
+}
+
+.headerTxt {
+    font-size: 100%;
+    font-weight: 600;
+}
+
+.par {
+    line-height: 150%;
+    padding: 2px 5px;
+}
+.par_row {
+    padding: 5px 5px;
+}
+
+
+/* Read more or less*/
+
+.rmblink a{
+    color: lightsteelblue;
+}
+.rmblink{
+    transition:all .5s linear;
+    padding-top: 29px;
+    font-size: 14px;
+}
+ul.perus li .rmdescription{
+    font-size: .9em;
+    line-height: 1.5em;
+
+}
+
+li {
+    list-style: none;
+}
+
+
+//Turna
+
+.turna_pdf {
+    text-align: center;
+    font-style: italic;
+}
+
+
+/*
+    tap to enlarge
+*/
+
+.modal .scroll {
+    height: 100% !important;
+    background-color: black !important;
+
+    display: -webkit-box !important;
+    display: -moz-box !important;
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
+    display: flex !important;
+
+    -webkit-box-direction: normal !important;
+    -moz-box-direction: normal !important;
+    -webkit-box-orient: horizontal !important;
+    -moz-box-orient: horizontal !important;
+    -webkit-flex-direction: row !important;
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+
+
+    -webkit-box-align: center !important;
+    -moz-box-align: center !important;
+    -webkit-align-items: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+
+}
+
+
+@media (min-width:641px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+
+ul.perus li img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 45%;
+    margin: 0 0 10px;
+    border-radius: 15px;
+    margin: 5px;
+    vertical-align: top;
+}
+
+.item {
+    vertical-align: top;
+    displat: inline;
+}
+
+.imgContainer {
+    padding-top: 10px;
+}
+
+.imgContainer img{
+    border-radius: 20px;
+}
+
+.headerTxt {
+    font-size: 100%;
+    font-weight: 600;
+}
+
+.par {
+    line-height: 200%;
+}
+.par_row {
+    padding: 0 5px;
+}
+
+ul.perus {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+ul.perus li {
+    width: 100% !important;
+    margin: 0 0 20px; 
+}
+
+
+}
+
+
+@media (min-width:961px) {
+ /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+ 
+}
+
+@media (min-width:1025px) {
+ /* big landscape tablets, laptops, and desktops */ 
+
+}

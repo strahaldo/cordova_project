@@ -1,0 +1,79 @@
+<div ng-controller="planDetailsCtrl" title="Navigator" var="myNavigator">
+    <ons-page>
+        <ons-toolbar class="toolbar-header">
+            <div class="left">
+                <ons-back-button ui-sref="planner.plan"></ons-back-button>
+            </div>
+            <div class="toolbar-center center">{{plan.title | limitTo: 16 }} {{plan.title.length < 16 ? '' : '...'}}</div>
+            <div class="right">
+                <ons-toolbar-button ng-click="instruct()">
+                    <ons-icon icon="fa fa-eye" style="color: whitesmoke;" class="icon">
+                    </ons-icon>
+                </ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+
+        
+        <ons-list data-as-sortable data-ng-model="selected_images">
+
+            <ons-list-header style="text-align: center; padding-top: 10px;" class="center">
+                <p>Valitut harjoitteet</p>
+            </ons-list-header>
+            <ons-list-item style="line-height: 60px;"
+                           ng-class="{even: $even, odd: $odd}"
+                           ng-repeat="selected_image in selected_images track by $index" data-as-sortable-item>
+                <ons-scroller>
+                <div>
+                    <span data-as-sortable-item-handle>
+                        <i class="ion-ios-drag" style="font-size:32px; vertical-align:-6px; padding-right: 15px;"></i>
+                    </span>
+                    <a style="text-decoration:none;"
+                       ui-sref="planner.planDetail.singlePlanDetails({c_id : selected_image.c_id})">
+                        {{selected_image.title | limitTo: 25 }} {{selected_image.title.length < 25 ? '' : '...'}}
+                    </a>
+
+                    <span class="plan_input">
+                        <input class="text-input" type="number"
+                               ng-model="selected_image.getTotal"
+                               ng-change="getTotalTime()">
+                    </span>
+                    <span class="deleteBtn" ng-click="removeCard($index)">
+                        <i class="ion-close-circled" style="font-size:32px; vertical-align:-6px;"></i>
+                    </span>
+                </div>
+                </ons-scroller>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-button modifier="large--cta" ng-click="totalPlan(total)">Päivitä harjoituksen kesto</ons-button>
+            </ons-list-item>
+        </ons-list>
+
+        <ons-bottom-toolbar>
+            <div class="bottom-bar__line-height" style="text-align:center">
+                <ons-row style="margin-left: 5px;">
+
+                    <ons-col class="green">
+                        <ons-icon icon="ion-clock" class="tab-icon">
+                        </ons-icon>
+
+                        <span> {{ total }} min</span>
+
+                    </ons-col>
+
+                    <ons-col class="blue" ui-sref="planner.edit({id :edit.id})" ng-click="editPlan()">
+                        <ons-icon icon="ion-edit" class="tab-icon"></ons-icon>
+                        <span class="tab-label">Muokkaa</span>
+                    </ons-col>
+
+                    <ons-col class="red" modifier="tappable"
+                             ng-click="removePlan()"
+                            >
+                        <ons-icon icon="ion-close" class="tab-icon"></ons-icon>
+                        <span class="tab-label">Poista harjoitus</span>
+                    </ons-col>
+                </ons-row>
+            </div>
+        </ons-bottom-toolbar>
+
+    </ons-page>
+</div>

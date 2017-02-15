@@ -1,0 +1,137 @@
+<div ng-controller="adminCtrlPiste">
+<ons-page  var="myNavigator">
+    <ons-toolbar class ="toolbar-header">
+        <div class="left">
+            <ons-back-button ui-sref="plannerPiste.plan"></ons-back-button>
+        </div>
+        <div class="toolbar-center center">Lisää harjoitussuunnitelma</div>
+    </ons-toolbar>
+
+                   <input type="text" name="details" class="new-planner"
+                          ng-model="title" placeholder="Lisää harjoitussuunnitelma"/>
+
+<ons-list>
+
+
+                        <ons-list-header style="text-align: center; padding-top: 10px;" class="center">
+                            <p style="font-size: larger;">Harjoitejärjestys..</p>
+                        </ons-list-header>
+
+                      <div id="new"></div>
+
+                        <ons-list-header style="text-align: center; padding-top: 10px;" class="center">
+                            <p style="font-size: larger;">Lisää harjoituksia</p>
+                        </ons-list-header>
+                   <div style="background-color: inherit; position:relative; text-align: center; margin-top: 20px; padding-bottom: 20px;">
+                       <button class="button" ng-click="addPlan()">Tallenna </button>
+                   </div>
+
+                                      <ul class="item-list">
+                                          <li ng-repeat="image in imagesPiste  | filter : {p_id : image.p_id} | filter:secSearch | orderBy:'p_id'"
+                                              ng-click="selectImage(image) "
+                                              ng-class="{ 'selected-image': image.selected }"
+                                              required>
+                                              <div class="list__header" ng-hide="image.title !== 'Pelaa Pistemestaria'" style="color :#A3A5A8;
+                                                    border-radius: 5px; margin-bottom: 3px;">
+                                                  Pelaa Pistemestaria
+
+                                              </div>
+                                              <div class="list__header" style="color :#A3A5A8;
+                                                    border-radius: 5px; 
+                                                    margin-bottom: 3px;" ng-repeat="sec in sectionPiste | filter : {p_id : image.p_id} ">
+                                                  {{sec.title}}
+
+                                              </div>
+<!--                                               <div class="cardButton" ng-show="image.title == 'Pelaa Pistemestaria'">
+                                                  <img ng-src="{{image.image_dir}}" class="thumbnailThumb">
+
+                                                      <p class="moduleTitle">{{image.title}}</p>
+                                              </div> -->
+
+
+                                              <div class="item" ng-show="image.title == 'Pelaa Pistemestaria'">
+                                                  <img  ng-src="{{image.image_dir}}"
+                                                        class="thumbnailThumb">
+                                                  <span class="caption">{{image.title}}</span>
+                                              </div>
+
+
+<!--                                               <div class="cardButton" ng-hide="image.title == 'Pelaa Pistemestaria'">
+                                                  <img ng-src="cdvfile://localhost/persistent/sabamestari/.images/pistemestari/{{image.image_name}}"
+                                                       fallback-src="http://sabamestariadmin.org/data/{{image}}" class="thumbnailThumb" ng-hide="image.image_dir == ''">
+
+                                                      <p class="moduleTitle">{{image.title}}</p>
+                                              </div> -->
+
+                                              <div class="item" ng-hide="image.title == 'Pelaa Pistemestaria'">
+                                                  <img  ng-src="cdvfile://localhost/persistent/sabamestari/.images/pistemestari/{{image.image_name}}"
+                                                        fallback-src="" class="thumbnailThumb" ng-hide="image.image_dir == ''"
+                                                        class="thumbnailThumb">
+                                                  <span class="caption">{{image.title}}</span>
+                                              </div>
+
+                                          </li>
+
+                                          <!-- Backup -->
+                                          <li ng-show="{{ images == undefined }}" ng-repeat="image in backupImages  | filter : {p_id : image.p_id} | filter:secSearch | orderBy:'p_id'"
+                                              ng-click="selectImage(image) "
+                                              ng-class="{ 'selected-image': image.selected }"
+                                              required>
+                                              <div class="list__header" ng-hide="image.title !== 'Pelaa Pistemestaria'" style="color :#A3A5A8;
+                                                    border-radius: 5px; margin-bottom: 3px;">
+                                                  Pelaa Pistemestaria
+                                              </div>
+                                              <div class="list__header" style="color :#A3A5A8;
+                                                    border-radius: 5px; margin-bottom: 3px;" ng-repeat="sec in backupSection | filter : {p_id : image.p_id} ">
+                                                  {{sec.title}}
+
+                                              </div>
+<!--                                               <div class="cardButton">
+                                                  <img  ng-src="image.image_dir" class="thumbnailThumb" ng-hide="image.image_dir == ''"
+                                                  fallback-src="{{image.image_dir}}">
+
+                                                  <p>{{image.title}}</p>
+                                              </div> -->
+
+
+                                              <div class="item" ng-show="image.title == 'Pelaa Pistemestaria'">
+                                                  <img  ng-hide="image.image_dir == ''"
+                                                        ng-src="image.image_dir"
+                                                        class="thumbnailThumb">
+                                                  <span class="caption">{{image.title}}</span>
+                                              </div>
+
+
+<!--                                               <div class="cardButton" ng-hide="image.title == 'Pelaa Pistemestaria'">
+                                                  <img ng-src="cdvfile://localhost/persistent/sabamestari/.images/pistemestari/{{image.image_name}}"
+                                                       fallback-src="http://sabamestariadmin.org/data/{{image}}" class="thumbnailThumb" ng-hide="image.image_dir == ''">
+
+                                                      <p class="moduleTitle">{{image.title}}</p>
+                                              </div> -->
+
+                                              <div class="item" ng-hide="image.title == 'Pelaa Pistemestaria'">
+                                                  <img  ng-src="cdvfile://localhost/persistent/sabamestari/.images/pistemestari/{{image.image_name}}"
+                                                        fallback-src="" class="thumbnailThumb" ng-hide="image.image_dir == ''"
+                                                        class="thumbnailThumb">
+                                                  <span class="caption">{{image.title}}</span>
+                                              </div>
+
+
+
+
+                                          </li>
+
+                                      </ul>
+
+
+                   <div style="background-color: inherit; position:relative; text-align: center; margin-top: 20px; padding-bottom: 20px;">
+                       <button class="button" ng-click="addPlan()">Tallenna </button>
+                   </div>
+
+
+</ons-list>
+
+
+
+</ons-page>
+</div>  

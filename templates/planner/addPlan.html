@@ -1,0 +1,108 @@
+<div ng-controller="adminCtrl">
+<ons-page  var="myNavigator">
+    <ons-toolbar class ="toolbar-header">
+        <div class="left">
+            <ons-back-button ui-sref="planner.plan"></ons-back-button>
+        </div>
+        <div class="toolbar-center center">Lisää harjoitussuunnitelma</div>
+    </ons-toolbar>
+
+                   <input type="text" name="details" class="new-planner"
+                          ng-model="title" placeholder="Lisää harjoitussuunnitelma"/>
+
+<ons-list>
+
+
+                        <ons-list-header style="text-align: center; padding-top: 10px;" class="center">
+                            <p style="font-size: larger;">Harjoitejärjestys..</p>
+                        </ons-list-header>
+
+                      <div id="new"></div>
+
+                        <ons-list-header style="text-align: center; padding-top: 10px;" class="center">
+                            <p style="font-size: larger;">Lisää harjoituksia</p>
+                        </ons-list-header>
+                   <div style="background-color: inherit; position:relative; text-align: center; margin-top: 20px; padding-bottom: 20px;">
+                       <button class="button" ng-click="addPlan()">Tallenna </button>
+                   </div>
+
+                                      <ul class="item-list">
+                                          <li ng-repeat="image in images  | filter : {s_id : image.s_id} | filter:secSearch | orderBy:'s_id'"
+                                              ng-click="selectImage(image) "
+                                              ng-class="{ 'selected-image': image.selected }"
+                                              required>
+                                              <div class="list__header" style="color :#A3A5A8;
+                                                    border-radius: 5px; 
+                                                    margin-bottom: 3px;" ng-repeat="sec in section | filter : {s_id : image.s_id} ">
+                                                  {{sec.title}}
+
+                                              </div>
+
+
+
+
+                                              <div class="item">
+                                                  <img  ng-src="cdvfile://localhost/persistent/sabamestari/.images/sabamestari/{{image.image_name}}"
+                                                  class="thumbnailThumb"
+                                                                                                      fallback-src="" ng-hide="image.image_dir == ''"
+                                                                                                fallback-src="{{image.image_dir}}">
+                                                  <span class="caption">{{image.title}}</span>
+                                              </div>
+
+
+
+
+
+
+
+
+<!--                                               <div class="cardButton">
+                                                  <img  ng-src="cdvfile://localhost/persistent/sabamestari/.images/sabamestari/{{image.image_name}}"
+                                                        fallback-src="http://sabamestariadmin.org/data/{{image}}" class="thumbnailThumb" ng-hide="image.image_dir == ''"
+                                                  fallback-src="{{image.image_dir}}">
+
+                                                  
+                                              </div>
+                                              <p class="p_title">{{image.title}}</p> -->
+                                          </li>
+
+                                          <!-- Backup -->
+                                          <li ng-show="{{ images == undefined }}" ng-repeat="image in backupImages  | filter : {s_id : image.s_id} | filter:secSearch | orderBy:'s_id'"
+                                              ng-click="selectImage(image) "
+                                              ng-class="{ 'selected-image': image.selected }"
+                                              required>
+                                              <div class="list__header" style="color :#A3A5A8;
+                                                    border-radius: 5px; margin-bottom: 3px;" ng-repeat="sec in backupSection | filter : {s_id : image.s_id} ">
+                                                  {{sec.title}}
+
+                                              </div>
+<!--                                               <div class="cardButton">
+                                                  <img  ng-src="http://sabamestariadmin.org/data/{{image.image_name}}" class="thumbnailThumb" ng-hide="image.image_dir == ''"
+                                                  fallback-src="{{image.image_dir}}">
+
+                                                  <p>{{image.title}}</p>
+                                              </div> -->
+
+                                              <div class="item">
+                                                  <img  ng-src=""
+                                                  class="thumbnailThumb"
+                                                  ng-hide="image.image_dir == ''"
+                                                  fallback-src="{{image.image_dir}}">
+                                                  <span class="caption">{{image.title}}</span>
+                                              </div>
+                                          </li>
+
+                                      </ul>
+
+
+                   <div style="background-color: inherit; position:relative; text-align: center; margin-top: 20px; padding-bottom: 20px;">
+                       <button class="button" ng-click="addPlan()">Tallenna </button>
+                   </div>
+
+
+</ons-list>
+
+
+
+</ons-page>
+</div>  

@@ -1,0 +1,129 @@
+<ons-page ng-controller="johSectionCtrl">
+
+<ons-toolbar class = "toolbar-header">
+  <div class="left">
+    <ons-back-button ui-sref="johda.home.part"></ons-back-button>
+  </div>
+  <div class="toolbar-center center">Kerhotunnin organisointi</div>
+
+</ons-toolbar>
+
+
+<!-- MODAL -->
+<ons-modal var="modal1">
+  <uib-carousel>
+    <uib-slide>
+      <img class="modalFull" ng-click="hideModal1()" ng-src="assets/img/flowchart1.png"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<!-- MODAL -->
+<ons-modal var="modal2">
+  <uib-carousel>
+    <uib-slide>
+      <img class="modalFull" ng-click="hideModal2()" ng-src="assets/img/flowchart2.png"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+
+<!-- <ul class="perus">
+  <li class="secBody">
+    Monipuolinen, tehokas ja hauska kerhotunti muodostuu viidestä osiosta. Näitä ovat alkuverryttely, yleismotoriikka, yksilölajitaidot, pienpelit sekä loppujäähdyttely.
+    Kentän koko määrää, miten tunti rakennetaan.
+  </li>
+</ul> -->
+
+<ons-list>
+<ons-row class="par_rpw">
+<ons-col>
+<ons-list-item>
+<p class="par">
+    Monipuolinen, tehokas ja hauska kerhotunti muodostuu viidestä osiosta. Näitä ovat alkuverryttely, yleismotoriikka, yksilölajitaidot, pienpelit sekä loppujäähdyttely.
+    Kentän koko määrää, miten tunti rakennetaan.
+</p>
+</ons-list-item>
+</ons-col>
+</ons-row>
+</ons-list>
+
+
+<ons-list>
+<ons-list-header class="headerTxt">Iso liikuntatila</ons-list-header>
+<ons-row align="center">
+<ons-col>
+  <ons-list-item>
+    <div ng-click="showModal1()"><img style="max-width: 500px;" ng-src="assets/img/flowchart1.png"></img></div>
+  </ons-list-item>
+</ons-col>
+</ons-row>
+<ons-row class="par_row">
+<ons-col>
+      <p class="par">
+        (esim. täysimittainen salibandykaukalo)
+        <br /><br />
+        <b>Suositus:</b> 2–3 ohjaajaa, max 30 lasta
+        <br /><br />
+        Tila jaetaan kolmeen osaan. Yhdessä osassa harjoitellaan yleismotoriikkaa, toisessa yksilölajitaitoja ja kolmannessa pienpelejä. Jokainen ryhmä käyttää 15 minuuttia kuhunkin harjoitusosioon (= yht. 45 min). Lisäksi kaikki osallistuvat alku­ ja loppujäähdyttelyyn.
+      </p>
+</ons-col>
+</ons-row>
+</ons-list>
+
+<!-- <ul class="perus">
+  <li>
+      <h2>Iso liikuntatila</h2>
+      <div ng-click="showModal1()"><img style="max-width: 500px;" ng-src="assets/img/flowchart1.png"></img></div>
+      <h3 >{{card.title}}</h3>
+      <p class="desc_kerho">
+        (esim. täysimittainen salibandykaukalo)
+        <br /><br />
+        <b>Suositus:</b> 2–3 ohjaajaa, max 30 lasta
+        <br /><br />
+        Tila jaetaan kolmeen osaan. Yhdessä osassa harjoitellaan yleismotoriikkaa, toisessa yksilölajitaitoja ja kolmannessa pienpelejä. Jokainen ryhmä käyttää 15 minuuttia kuhunkin harjoitusosioon (= yht. 45 min). Lisäksi kaikki osallistuvat alku­ ja loppujäähdyttelyyn.
+      </p>
+  </li>
+</ul> -->
+
+
+<ons-list>
+<ons-list-header class="headerTxt">Pieni liikuntatila</ons-list-header>
+<ons-row align="center">
+<ons-col>
+      <div ng-click="showModal2()"><img style="max-width: 500px;" ng-src="assets/img/flowchart2.png"></img></div>
+</ons-col>
+</ons-row>
+<ons-row class="par_row">
+<ons-col>
+      <p class="par">
+        (esim. koulun pieni liikuntasali)
+        <br /><br />
+        <b>Suositus:</b> 1–2 ohjaajaa, max 20 lasta
+        <br /><br />
+        Koko ryhmä suorittaa yhdessä kaikki osiot: yleismotoriikan, yksilölajitaidot ja pienpelit. Jokaiseen harjoitusosioon käytetään 15 minuuttia. Lisäksi kaikki osallistuvat alku­ ja loppujäähdyttelyyn.
+      </p>
+</ons-col>
+</ons-row>
+</ons-list>
+
+
+
+<!-- <ul class="perus">
+  <li>
+      <h2>Pieni liikuntatila</h2>
+      <div ng-click="showModal2()"><img style="max-width: 500px;" ng-src="assets/img/flowchart2.png"></img></div>
+      <h3 >{{card.title}}</h3>
+      <p class="desc_kerho">
+        (esim. koulun pieni liikuntasali)
+        <br /><br />
+        <b>Suositus:</b> 1–2 ohjaajaa, max 20 lasta
+        <br /><br />
+        Koko ryhmä suorittaa yhdessä kaikki osiot: yleismotoriikan, yksilölajitaidot ja pienpelit. Jokaiseen harjoitusosioon käytetään 15 minuuttia. Lisäksi kaikki osallistuvat alku­ ja loppujäähdyttelyyn.
+      </p>
+  </li>
+</ul> -->
+
+</ons-page>

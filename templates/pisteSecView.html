@@ -1,0 +1,123 @@
+<ons-page ng-controller="pisteSecCtrl">
+
+<ons-toolbar class = "toolbar-header">
+  <div class="left">
+    <ons-back-button ui-sref="piste.home"></ons-back-button>
+  </div>
+  <div class="toolbar-center center">{{p_sec.title | limitTo: 20 }} {{p_sec.title.length < 20 ? '' : '...'}}</div>
+  <div class="right">
+    <ons-toolbar-button ui-sref="plannerPiste.plan">
+          <ons-icon icon="fa-list-alt" class="icon">
+          </ons-icon>
+    </ons-toolbar-button>
+  </div>
+</ons-toolbar>
+
+v
+<ons-list>
+<ons-list-item style="margin-top: 20px">
+  <ons-row>
+  <ons-col width="66%" align="left">
+  <input type="search" class="search-input" ng-model="cardSearch">
+  </ons-col>
+
+  <ons-col width="33%" align="right">
+
+  <div class="button-bar diff_switch">
+      <div class="button-bar__item">
+      <input type="radio" name="segment-a" ng-model="sortorder" value="diff">
+      <button class="button-bar__button">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </button>
+    </div>
+    <div class="button-bar__item">
+      <input type="radio" name="segment-a" ng-model="sortorder" value="title" checked>
+      <button class="button-bar__button">ABC</button>
+    </div>
+  </div>
+
+  </ons-col>
+  </ons-row>
+ </ons-list-item>
+  <ons-list-item modifier="chevron"
+                 ng-class-odd="'odd'"
+                 class="list-item-container" 
+                 ng-repeat="card in cards | filter:cardSearch | orderBy:sortorder"
+                 ui-sref ="piste.home.sec.card({cId: card.c_id})">
+    <ons-row>
+      <ons-col width="95px" ng-hide="card.image_dir == ''">
+        <img ng-src="cdvfile://localhost/persistent/sabamestari/.images/pistemestari/{{card.image_name}}"
+             fallback-src="http://sabamestariadmin.org/data/{{card.image_name}}"
+             class="thumbnail">
+      </ons-col>
+      <ons-col>
+        <div class="name">
+          {{ card.title }}
+        </div>
+        <div class="desc" ng-bind-html="card.body | limitTo:80 | trustedhtml"></div>
+        <div class="diff">
+
+          <div ng-if="card.diff == 1 ">
+          <i class="fa fa-star"></i>
+          </div>
+
+           <div ng-if="card.diff == 2 ">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          </div>
+
+          <div ng-if="card.diff == 3 ">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          </div>
+        </div>
+      </ons-col>
+      <ons-col width="40px"></ons-col>
+    </ons-row>
+  </ons-list-item>
+
+  <ons-list-item modifier="chevron"
+                 ng-show="{{ cards == undefined }}"
+                 ng-class-odd="'odd'"
+                 class="list-item-container" 
+                 ng-repeat="card in backupCards | filter:cardSearch | orderBy:sortorder"
+                 ui-sref ="piste.home.sec.card({cId: card.c_id})">
+    <ons-row>
+      <ons-col width="95px" ng-hide="card.image_dir == ''">
+        <img ng-src="cdvfile://localhost/persistent/sabamestari/.images/pistemestari/{{card.image_name}}"
+             fallback-src="http://sabamestariadmin.org/data/{{card.image_name}}"
+             class="thumbnail">
+      </ons-col>
+      <ons-col>
+        <div class="name">
+          {{ card.title }}
+        </div>
+        <div class="desc" ng-bind-html="card.body | limitTo:80 | trustedhtml"></div>
+        <div class="diff">
+
+          <div ng-if="card.diff == 1 ">
+          <i class="fa fa-star"></i>
+          </div>
+
+           <div ng-if="card.diff == 2 ">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          </div>
+
+          <div ng-if="card.diff == 3 ">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          </div>
+        </div>
+      </ons-col>
+      <ons-col width="40px"></ons-col>
+    </ons-row>
+  </ons-list-item>
+
+</ons-list>
+
+
+</ons-page>

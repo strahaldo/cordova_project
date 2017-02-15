@@ -1,0 +1,53 @@
+  <ons-page ng-controller="johdantoCtrl">
+    <ons-toolbar class="toolbar-header">
+      <div class="left">
+        <ons-back-button ui-sref="johda.home"></ons-back-button>
+      </div>
+      <div class="toolbar-center center">Säbämestari</div>
+    </ons-toolbar>
+  <ons-list>
+
+
+    <ons-list-item class="list__item--tappable list__item__line-height" modifier="chevron" 
+                    ui-sref="johda.home.part.vinkit">
+        <ons-row>
+          <ons-col class="chapter-title">
+            <div class="list-name">Vinkit valmentajalle</div>
+          </ons-col>
+        </ons-row>
+    </ons-list-item>
+    <ons-list-item class="list__item--tappable list__item__line-height" modifier="chevron" 
+                    ui-sref="johda.home.part.kerho">
+        <ons-row>
+          <ons-col class="chapter-title">
+            <div class="list-name">Kerhotunnin organisointi</div>
+          </ons-col>
+        </ons-row>
+    </ons-list-item>
+    <ons-list-item class="list__item--tappable list__item__line-height" modifier="chevron" 
+                    ui-sref="johda.home.part.perus">
+        <ons-row>
+          <ons-col class="chapter-title">
+            <div class="list-name">Salibandyn perustekniikka</div>
+          </ons-col>
+        </ons-row>
+    </ons-list-item>
+
+    <!--
+    <ons-list-item class="list__item--tappable list__item__line-height" modifier="chevron" 
+                    ng-repeat="section in sections"
+                    ui-sref="johda.home.vinkit.sec({j_id: section.j_id})">
+        <ons-row>
+          <ons-col class="chapter-title">
+            <div class="list-name"> {{ section.title }} </div>
+          </ons-col>
+        </ons-row>
+    </ons-list-item>
+    -->
+
+
+  </ons-list>
+  </ons-page>
+
+
+

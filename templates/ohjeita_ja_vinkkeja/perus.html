@@ -1,0 +1,410 @@
+<ons-page ng-controller="johSectionCtrl">
+
+<ons-toolbar class = "toolbar-header">
+  <div class="left">
+    <ons-back-button ui-sref="johda.home.part"></ons-back-button>
+  </div>
+  <div class="toolbar-center center">Salibandyn perustekniikka</div>
+
+</ons-toolbar>
+
+<!-- MODAL -->
+<ons-modal var="modal1">
+  <uib-carousel>
+    <uib-slide>
+      <img class="modalFull" ng-click="hideModalPerus1()" ng-src="assets/img/perus/Mailaote.png"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<!-- MODAL -->
+<ons-modal var="modal2">
+  <uib-carousel>
+    <uib-slide>
+      <img class="modalFull" ng-click="hideModalPerus2()" ng-src="assets/img/perus/Peliasento.png"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<!-- MODAL -->
+<ons-modal var="modal3">
+  <uib-carousel>
+    <uib-slide>
+      <img class="modalFull" ng-click="hideModalPerus3()" ng-src="assets/img/perus/Syottoasento.png"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<!-- MODAL -->
+<ons-modal var="modal4">
+  <uib-carousel>
+    <uib-slide>
+      <img class="modalFullLand" ng-click="hideModalPerus4()" ng-src="assets/img/perus/Perussyottoo_2_9695.png"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<!-- MODAL -->
+<ons-modal var="modal5">
+  <uib-carousel>
+    <uib-slide>
+      <img class="modalFullLand" ng-click="hideModalPerus5()" ng-src="assets/img/perus/Perussyoottoo_3_9698.png"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<!-- MODAL -->
+<ons-modal var="modal6">
+  <uib-carousel>
+    <uib-slide>
+      <img class="modalFullLand" ng-click="hideModalPerus6()" ng-src="assets/img/perus/Syootoonvastaanotto2.png"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<!-- MODAL -->
+<ons-modal var="modal7">
+  <uib-carousel>
+    <uib-slide>
+      <img class="modalFull" ng-click="hideModalPerus7()" ng-src="assets/img/perus/Syotonvastaanotto.png"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<!-- MODAL -->
+<ons-modal var="modal8">
+  <uib-carousel>
+    <uib-slide>
+      <img class="modalFull" ng-click="hideModalPerus8()" ng-src="assets/img/perus/Rystysyootto_2_9703.png"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<!-- MODAL -->
+<ons-modal var="modal9">
+  <uib-carousel>
+    <uib-slide>
+      <img class="modalFull" ng-click="hideModalPerus9()" ng-src="assets/img/perus/Rystysyotto_3_9705.png"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<!-- MODAL -->
+<ons-modal var="modal10">
+  <uib-carousel>
+    <uib-slide>
+      <img class="modalFull" ng-click="hideModalPerus10()" ng-src="assets/img/perus/Rannelaukaus_2_9745.png"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<!-- MODAL -->
+<ons-modal var="modal11">
+  <uib-carousel>
+    <uib-slide>
+      <img class="modalFullLand" ng-click="hideModalPerus11()" ng-src="assets/img/perus/Rannelaukaus_3_9748.png"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<!-- MODAL -->
+<ons-modal var="modal12">
+  <uib-carousel>
+    <uib-slide>
+      <img class="modalFullLand" ng-click="hideModalPerus12()" ng-src="assets/img/perus/Rannelaukaus.png"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<!-- <ul class="perus">
+  <li>
+      <h2>1.Maila</h2>
+      <p class="desc_kerho">
+Junioripelaajalle suositellaan mailaa, jossa on taipuisa (yli 30 mm) varsi sekä pehmeä (soft) lapa. Taipuisa varsi helpottaa oikeaoppisen laukaisu­tekniikan harjoittelemista, pehmeä lapa pallonkäsittelyä. Sopivan pituinen maila ulottuu maasta navan korkeudelle tai hieman sen yläpuolelle, jolloin sulava pallonkäsittely onnistuu myös lähellä vartaloa.
+      </p>
+  </li>
+</ul> -->
+
+
+<ons-list>
+<ons-list-header class="headerTxt">1.Maila</ons-list-header>
+<ons-row>
+<ons-col>
+<ons-list-item>
+      <p class="par">
+Junioripelaajalle suositellaan mailaa, jossa on taipuisa (yli 30 mm) varsi sekä pehmeä (soft) lapa. Taipuisa varsi helpottaa oikeaoppisen laukaisu­tekniikan harjoittelemista, pehmeä lapa pallonkäsittelyä. Sopivan pituinen maila ulottuu maasta navan korkeudelle tai hieman sen yläpuolelle, jolloin sulava pallonkäsittely onnistuu myös lähellä vartaloa.
+      </p>
+</ons-list-item>
+</ons-col>
+</ons-row>
+</ons-list>
+
+<!-- <ul class="perus">
+  <li>
+      <h2>2.Mailaote</h2>
+      <div ng-click="showModalPerus1()" class="imgContainer"><img ng-src="assets/img/perus/Mailaote.png"></img></div>
+      <p class="desc_kerho">
+Kahden käden ote mailasta. Ylemmän käden kämmen menee hieman tupen yli, ja ote ”kättelee” mailaa. Ala­ ja yläkäden etäisyys toisistaan on noin 2,5 kämmenen leveyttä.
+      </p>
+  </li>
+</ul> -->
+
+
+<ons-list>
+<ons-list-header class="headerTxt">2.Mailaote</ons-list-header>
+<ons-row align="center">
+<ons-col>
+<ons-list-item>
+      <div ng-click="showModalPerus1()" class="imgContainer"><img ng-src="assets/img/perus/Mailaote.png"></img></div>
+  </ons-list-item>
+</ons-col>
+</ons-row>
+<ons-row>
+<ons-list-item>
+      <p class="par">
+Kahden käden ote mailasta. Ylemmän käden kämmen menee hieman tupen yli, ja ote ”kättelee” mailaa. Ala­ ja yläkäden etäisyys toisistaan on noin 2,5 kämmenen leveyttä.
+      </p>
+  </ons-list-item>
+</ons-row>
+</ons-list>
+
+<!-- <ul class="perus">
+  <li>
+      <h2>3.Peliasento</h2>
+      <div ng-click="showModalPerus2()" class="imgContainer"><img ng-src="assets/img/perus/Peliasento.png"></img></div>
+      <p class="desc_kerho">
+Jalat ovat noin hartianlevyisessä haara­asennossa. Polvet pidetään hieman koukussa, paino kevyesti päkiöillä. Maila pysyy maassa, pää ylhäällä ja katse eteenpäin.
+      </p>
+  </li>
+</ul> -->
+
+
+<ons-list>
+<ons-list-header class="headerTxt">3.Peliasento</ons-list-header>
+<ons-row align="center">
+<ons-col>
+<ons-list-item>
+  <div ng-click="showModalPerus2()" class="imgContainer"><img ng-src="assets/img/perus/Peliasento.png"></img></div>
+  </ons-list-item>
+</ons-col>
+</ons-row>
+<ons-row>
+<ons-list-item>
+      <p class="par">
+Jalat ovat noin hartianlevyisessä haara­asennossa. Polvet pidetään hieman koukussa, paino kevyesti päkiöillä. Maila pysyy maassa, pää ylhäällä ja katse eteenpäin.
+      </p>
+  </ons-list-item>
+</ons-row>
+</ons-list>
+
+<!-- <ul class="perus">
+  <li>
+      <h2>4.Syöttöasento</h2>
+      <div ng-click="showModalPerus3()" class="imgContainer"><img ng-src="assets/img/perus/Syottoasento.png"></img></div>
+      <p class="desc_kerho">
+Kylkiasento. Left­pelaajalla vasen käsi on alhaalla ja oikea kylki vastaanottajaa kohti, right­pelaajalla oikea käsi alhaalla ja vasen kylki vastaanottajaa kohti. Jalat pidetään rinnakkain luontevassa, kevyessä haara­asennossa.
+      </p>
+  </li>
+</ul> -->
+
+<ons-list>
+<ons-list-header class="headerTxt">4.Syöttöasento</ons-list-header>
+<ons-row align="center">
+<ons-col>
+<ons-list-item>
+<div ng-click="showModalPerus3()" class="imgContainer"><img ng-src="assets/img/perus/Syottoasento.png"></img></div>
+</ons-list-item>
+</ons-col>
+</ons-row>
+<ons-row>
+<ons-list-item>
+      <p class="par">
+Kylkiasento. Left­pelaajalla vasen käsi on alhaalla ja oikea kylki vastaanottajaa kohti, right­pelaajalla oikea käsi alhaalla ja vasen kylki vastaanottajaa kohti. Jalat pidetään rinnakkain luontevassa, kevyessä haara­asennossa.
+      </p>
+    </ons-list-item>
+</ons-row>
+</ons-list>
+
+<!-- <ul class="perus">
+  <li>
+      <h2>5.Perussyöttö</h2>
+      <div class="cont">
+        <div ng-click="showModalPerus4()" class="imgContainer"><img ng-src="assets/img/perus/Perussyottoo_2_9695.png"></img></div>
+        <div ng-click="showModalPerus5()" class="imgContainer"><img ng-src="assets/img/perus/Perussyoottoo_3_9698.png"></img></div>
+      </div>
+      <p class="desc_kerho">
+Pallo pysyy koko ajan kiinni lavassa. Lavan liike lähtee taemman jalan takaa. Pallo irtoaa lavasta, kun lapa on ylittänyt etummaisen jalan; näin lapa saattaa palloa syöttösuuntaan. Paino siirtyy lavan liikkuessa hieman takapainoisesta etupainoiseen eli molemmilta jaloilta etummaiselle tukijalalle (keinuva liike takaa eteen). Samalla vartalo kiertyy syöttöliikkeen mukana. Rystysyötössä käytetään samaa tekniikkaa.
+      </p>
+  </li>
+</ul> -->
+
+
+<ons-list>
+<ons-list-header class="headerTxt">5.Perussyöttö</ons-list-header>
+<ons-row align="center">
+<ons-col>
+<ons-list-item>
+<div ng-click="showModalPerus4()" class="imgContainer"><img ng-src="assets/img/perus/Perussyottoo_2_9695.png"></img></div>
+</ons-list-item>
+</ons-col>
+<ons-col>
+<ons-list-item>
+<div ng-click="showModalPerus5()" class="imgContainer"><img ng-src="assets/img/perus/Perussyoottoo_3_9698.png"></img></div>
+</ons-list-item>
+</ons-col>
+</ons-row>
+<ons-row>
+<ons-list-item>
+      <p class="par">
+Pallo pysyy koko ajan kiinni lavassa. Lavan liike lähtee taemman jalan takaa. Pallo irtoaa lavasta, kun lapa on ylittänyt etummaisen jalan; näin lapa saattaa palloa syöttösuuntaan. Paino siirtyy lavan liikkuessa hieman takapainoisesta etupainoiseen eli molemmilta jaloilta etummaiselle tukijalalle (keinuva liike takaa eteen). Samalla vartalo kiertyy syöttöliikkeen mukana. Rystysyötössä käytetään samaa tekniikkaa.
+      </p>
+      </ons-list-item>
+</ons-row>
+</ons-list>
+
+<!-- <ul class="perus">
+  <li>
+      <h2>6.Syötön vastaanotto</h2>
+      <div ng-click="showModalPerus6()" class="imgContainer"><img ng-src="assets/img/perus/Syootoonvastaanotto2.png"></img></div>
+      <div ng-click="showModalPerus7()" class="imgContainer"><img ng-src="assets/img/perus/Syotonvastaanotto.png"></img></div>
+      <p class="desc_kerho">
+Syötön vastaanotto on syötön peilikuva. Lapa joustaa taaksepäin juuri ennen kuin pallo osuu siihen. Samalla paino siirtyy etummaiselta jalalta molemmille jaloille (keinuva liike edestä taakse).
+      </p>
+  </li>
+</ul> -->
+
+<ons-list>
+  <ons-list-header class="headerTxt">6.Syötön vastaanotto</ons-list-header>
+  <ons-row align="center">
+  <ons-col>
+    <ons-list-item>
+    <div ng-click="showModalPerus6()" class="imgContainer"><img ng-src="assets/img/perus/Syootoonvastaanotto2.png"></img></div>
+    </ons-list-item>
+  </ons-col>
+  <ons-col>
+    <ons-list-item>
+    <div ng-click="showModalPerus7()" class="imgContainer"><img ng-src="assets/img/perus/Syotonvastaanotto.png"></img></div>
+    </ons-list-item>
+  </ons-col>
+  </ons-row>
+  <ons-row>
+<ons-list-item>
+      <p class="par">
+Syötön vastaanotto on syötön peilikuva. Lapa joustaa taaksepäin juuri ennen kuin pallo osuu siihen. Samalla paino siirtyy etummaiselta jalalta molemmille jaloille (keinuva liike edestä taakse).
+      </p>
+  </ons-list-item>
+  </ons-row>
+</ons-list>
+
+<!-- <ul class="perus">
+  <li>
+      <h2>7.Rystysyöttö näpäyttämällä (näpäytysrysty)</h2>
+      <div ng-click="showModalPerus8()" class="imgContainer"><img ng-src="assets/img/perus/Rystysyootto_2_9703.png"></img></div>
+      <div ng-click="showModalPerus9()" class="imgContainer"><img ng-src="assets/img/perus/Rystysyotto_3_9705.png"></img></div>
+      <p class="desc_kerho">
+Palloa napautetaan nopeasti. Lapa ei koske lattiaan vaan vain palloon. Vauhtia otetaan pienellä takaheilautuksella, joka nousee korkeintaan polven korkeudelle. Ylävartalon kierto antaa syöttöön lisää voimaa. Mailaote on hieman tavallista kapeampi, 1–2 kämmenen leveyttä.
+      </p>
+  </li>
+</ul> -->
+
+
+<ons-list>
+  <ons-list-header class="headerTxt">7.Rystysyöttö näpäyttämällä (näpäytysrysty)</ons-list-header>
+  <ons-row align="center">
+  <ons-col>
+    <ons-list-item>
+      <div ng-click="showModalPerus8()" class="imgContainer"><img ng-src="assets/img/perus/Rystysyootto_2_9703.png"></img></div>
+    </ons-list-item>
+  </ons-col>
+  <ons-col>
+    <ons-list-item>
+      <div ng-click="showModalPerus9()" class="imgContainer"><img ng-src="assets/img/perus/Rystysyotto_3_9705.png"></img></div>
+    </ons-list-item>
+  </ons-col>
+  </ons-row>
+  <ons-row>
+  <ons-list-item>
+        <p class="par">
+Palloa napautetaan nopeasti. Lapa ei koske lattiaan vaan vain palloon. Vauhtia otetaan pienellä takaheilautuksella, joka nousee korkeintaan polven korkeudelle. Ylävartalon kierto antaa syöttöön lisää voimaa. Mailaote on hieman tavallista kapeampi, 1–2 kämmenen leveyttä.
+      </p>
+      </ons-list-item>
+  </ons-row>
+
+</ons-list>
+
+<!-- <ul class="perus">
+  <li>
+      <h2>8.Lyhyt syötönanto / lyhyt syötön vastaanotto</h2>
+      <p class="desc_kerho">
+Lyhyt syöttö annetaan peliasennosta, kun pallo on hallussa. Kädet ja ranteet tekevät nopean liikkeen (noin 15 cm) haluttuun suuntaan, minkä jälkeen pallo irtoaa lavasta. Lyhyt syötön vastaanotto on peilikuva lyhyestä syötönannosta. Siinä ranneliike mahdollistaa jouston ja pehmeän kosketuksen lavalla palloon. Jouston eli taaksepäin tapahtuvan liikkeen ajoitus on lyhyessä syötön vastaanotossa tärkeää.
+      </p>
+  </li>
+</ul> -->
+
+<ons-list>
+<ons-list-header class="headerTxt">8.Lyhyt syötönanto / lyhyt syötön vastaanotto</ons-list-header>
+<ons-list-item>
+  <p class="par">
+Lyhyt syöttö annetaan peliasennosta, kun pallo on hallussa. Kädet ja ranteet tekevät nopean liikkeen (noin 15 cm) haluttuun suuntaan, minkä jälkeen pallo irtoaa lavasta. Lyhyt syötön vastaanotto on peilikuva lyhyestä syötönannosta. Siinä ranneliike mahdollistaa jouston ja pehmeän kosketuksen lavalla palloon. Jouston eli taaksepäin tapahtuvan liikkeen ajoitus on lyhyessä syötön vastaanotossa tärkeää.
+  </p>
+</ons-list-item>
+</ons-list>
+
+<!-- <ul class="perus">
+  <li>
+      <h2>9.Rannelaukaus</h2>
+      <div class="item">
+      <div ng-click="showModalPerus10()" class="imgContainer" id="img1"><img ng-src="assets/img/perus/Rannelaukaus_2_9745.png"></img></div>
+      <div ng-click="showModalPerus11()" class="imgContainer"><img ng-src="assets/img/perus/Rannelaukaus_3_9748.png"></img></div>
+      <div ng-click="showModalPerus12()" class="imgContainer"><img ng-src="assets/img/perus/Rannelaukaus.png"></img></div>
+      </div>
+      <p class="desc_kerho">
+      Rannelaukauksessa käytetään samaa perustekniikkaa kuin perussyötössä; erona on perussyöttöä suurempi voima. Laukauksen nopeus syntyy kolmesta elementistä: painonsiirto, ylävartalon kierto ja käsien/ranteiden käyttö. Laukauksen suuntaukseen ja korkeuteen vaikutetaan ranteiden käytöllä ja laukauksen saatolla. Ohjaajan tulee varmistaa alusta lähtien, että maila ei nouse liian korkealle eli lantion yläpuolelle.
+      </p>
+  </li>
+</ul> -->
+
+
+<ons-list>
+  <ons-list-header class="headerTxt">9.Rannelaukaus</ons-list-header>
+  <ons-row align="center">
+  <ons-col>
+  <ons-list-item>
+      <div ng-click="showModalPerus10()" class="imgContainer" id="img1"><img style="height: 200px;" ng-src="assets/img/perus/Rannelaukaus_2_9745.png"></img></div>
+  </ons-list-item>
+  </ons-col>
+  </ons-row>
+  <ons-row align="center">
+  <ons-col>
+  <ons-list-item>
+  <div ng-click="showModalPerus11()" class="imgContainer"><img ng-src="assets/img/perus/Rannelaukaus_3_9748.png"></img></div>
+  </ons-list-item>
+  </ons-col>
+  <ons-col>
+  <ons-list-item>
+      <div ng-click="showModalPerus12()" class="imgContainer"><img ng-src="assets/img/perus/Rannelaukaus.png"></img></div>
+  </ons-list-item>
+  </ons-col>
+  </ons-row>
+  <ons-list-item>
+  <p class="par">
+      Rannelaukauksessa käytetään samaa perustekniikkaa kuin perussyötössä; erona on perussyöttöä suurempi voima. Laukauksen nopeus syntyy kolmesta elementistä: painonsiirto, ylävartalon kierto ja käsien/ranteiden käyttö. Laukauksen suuntaukseen ja korkeuteen vaikutetaan ranteiden käytöllä ja laukauksen saatolla. Ohjaajan tulee varmistaa alusta lähtien, että maila ei nouse liian korkealle eli lantion yläpuolelle.
+  </p>
+  </ons-list-item>
+</ons-list>
+
+
+
+</ons-page>

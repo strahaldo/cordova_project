@@ -1,0 +1,37 @@
+<ons-navigator title="Navigator" var="myNavigator">
+    <ons-page ng-controller="johdantoCtrl">
+    <ons-toolbar class="toolbar-header">
+      <div class="left">
+        <ons-toolbar-button ng-click="app.menu.toggle()">
+          <ons-icon icon="ion-navicon" size="40px" fixed-width="false" class="icon"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="toolbar-center center">Ohjeita ja vinkkejä</div>
+    </ons-toolbar>
+        <ons-list style="margin: -1px 0">
+
+            <ons-list-item class="list__item--tappable list__item__line-height" modifier="chevron">
+            <ons-row>
+                <ons-col class='chapter-title'
+                         ui-sref="johda.home.part">
+                    <div class="list-name">Säbämestari – ohjeet ja vinkit</div>
+                </ons-col>
+            </ons-row>
+            </ons-list-item>
+
+            <ons-list-item class="list__item--tappable list__item__line-height" modifier="chevron">
+            <ons-row>
+                <ons-col class='chapter-title'
+                         ui-sref="johda.home.partPiste">
+                    <div class="list-name">Pistemestari – ohjeet ja vinkit</div>
+                </ons-col>
+            </ons-row>
+            </ons-list-item>
+
+
+        </ons-list>
+
+    </ons-page>
+</ons-navigator>
+
+

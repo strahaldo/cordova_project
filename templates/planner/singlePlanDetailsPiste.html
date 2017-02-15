@@ -1,0 +1,75 @@
+<ons-page ng-controller="singlePlanDetailsCtrlPiste">
+
+<ons-toolbar class="toolbar-header">
+  <div class="left">
+    <ons-back-button ui-sref="plannerPiste.planDetail"></ons-back-button>
+  </div>
+  <div class="toolbar-center center">{{ card.title | limitTo: 20 }} {{card.title.length < 20 ? '' : '...'}}</div>
+
+</ons-toolbar>
+
+<!-- MODAL -->
+<ons-modal var="modal">
+  <uib-carousel>
+    <uib-slide ng-repeat="image in imgs">
+      <img class="fullscreen" ng-click="hideModal()" ng-src="{{source}}/{{image}}"
+      fallback-src=""></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<!-- MODAL -->
+<ons-modal var="modal2">
+  <uib-carousel>
+    <uib-slide ng-repeat="image in backupimgs">
+      <img class="fullscreen" ng-click="hideModal2()" ng-src=""></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<div ng-hide="status == '404'">
+<ons-row class="img_dir">
+  <uib-carousel class="centrImg">
+    <uib-slide ng-repeat="image in imgs">
+       <div ng-click="showModal()"><img ng-src="cdvfile://localhost/persistent/sabamestari/.images/pistemestari/{{image}}"
+        fallback-src=""></img></div>
+    </uib-slide>
+  </uib-carousel>
+</ons-row>
+</div>
+
+<div ng-hide="status == 'works'">
+<ons-row class="img_dir">
+  <uib-carousel class="centrImg">
+    <uib-slide ng-repeat="image in backupimgs">
+       <div ng-click="showModal2()"><img class="singleImage" ng-src=""></img></div>
+    </uib-slide>
+  </uib-carousel>
+</ons-row>
+</div>
+
+<ons-col class="c_body" ng-init="accordion=1">
+
+<ons-list class="wrapper first_p">
+<ons-row>
+  <h4 class="accordion" ng-class="{active:accordion==1}">
+    <a href ng-click="accordion = 1">{{card.title}}</a>
+  </h4>
+</ons-row>
+  <ons-row ng-show="accordion==1" ng-bind-html="card.body | trustedhtml"></ons-row>
+</ons-row>
+</ons-list>
+
+<ons-list class="wrapper var" ng-hide="card.variations == ''">
+<ons-row>
+<h4 class="accordion" ng-class="{active:accordion==2}">
+    <a href ng-click="accordion = 2">Variaatio</a>
+  </h4>
+  <ons-row ng-show="accordion==2" ng-bind-html="card.variations | trustedhtml"></ons-row>
+</ons-row>
+</ons-list>
+
+</ons-col>
+</ons-page>

@@ -1,0 +1,43 @@
+<ons-page ng-controller="johSectionCtrl">
+
+<ons-toolbar class = "toolbar-header">
+  <div class="left">
+    <ons-back-button ui-sref="johda.home.vinkit"></ons-back-button>
+  </div>
+  <div class="toolbar-center center">{{sec.title | limitTo: 18 }} {{card.title.length < 18 ? '' : '...'}}</div>
+
+</ons-toolbar>
+
+<!-- MODAL -->
+<ons-modal var="modal">
+  <uib-carousel>
+    <uib-slide ng-repeat="card in cardsArray">
+      <img class="fullscreen" ng-click="hideModal()" ng-src="{{source}}/{{card.image_name}}"></img>
+    </uib-slide>
+  </uib-carousel>
+</ons-modal>
+<!-- END -->
+
+<ul class="perus" ng-hide="sec.body == ''">
+  <li class="secBody" ng-bind-html="sec.body | trustedhtml"></li>
+</ul>
+
+<ul class="list" ng-repeat="card in rulesArray">
+  <li class="list__header title">
+    {{card.title}}
+  </li>
+  <li class="list__item">
+    <div class="thumbnail_vinki_body" ng-bind-html="card.body | trustedhtml"></div>
+  </li>
+</ul>
+
+
+ <ul class="perus" ng-repeat="card in cardsArray" >
+  <li>
+      <div ng-click="showModal()"><img ng-src="{{source}}/{{card.image_name}}"></img></div>
+      <h3 >{{card.title}}</h3>
+      <p class="desc_kerho" ng-bind-html="card.body |trustedhtml"></p>
+  </li>
+</ul>
+
+</ons-page>

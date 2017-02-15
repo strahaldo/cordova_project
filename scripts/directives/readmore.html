@@ -1,0 +1,18 @@
+
+<span ng-if="rmtext.length > rmlimit">
+
+	<span ng-hide="rmfulltext" class="rmblink">
+		{{ rmtext | limitTo:rmlimit }}...
+		<a ngclass="{{ rmMoreClass }}" ng-click="toggleValue()">{{ rmMoreText }}</a>
+	</span>
+
+	<span ng-show="rmfulltext" class="rmblink">
+		{{ rmtext }}
+		<a ng-class="{{ rmLessClass }}" ng-click="toggleValue()">{{ rmLessText }}</a>
+	</span>
+
+</span>
+
+<span ng-if="rmtext.length <= rmlimit">
+	{{ rmtext }}
+</span>

@@ -1,0 +1,70 @@
+<ons-navigator title="Navigator" var="myNavigator">
+<ons-page ng-controller="sabaCtrl">
+<!--
+  <ons-pull-hook var="loader" ng-action="load($done)">
+    <span ng-switch="loader.getCurrentState()">
+      <span ng-switch-when="initial"><ons-icon size="35px" icon="ion-arrow-down-a"></ons-icon>Pull down to refresh</span>
+      <span ng-switch-when="preaction"><ons-icon size="35px" icon="ion-arrow-up-a"></ons-icon>Release to refresh</span>
+      <span ng-switch-when="action"><ons-icon size="35px" spin="true" icon="ion-load-d"></ons-icon>Loading data. Please wait...</span>
+    </span>
+  </ons-pull-hook>
+  -->
+
+<ons-toolbar class="toolbar-header">
+  <div class="left">
+    <ons-toolbar-button ng-click="app.menu.toggle()">
+      <ons-icon icon="ion-navicon" size="40px" fixed-width="false" class="icon"></ons-icon>
+    </ons-toolbar-button>
+  </div>
+  <div class="toolbar-center center">Säbämestari</div>
+  <div class="right">
+    <ons-toolbar-button ui-sref="planner.plan">
+          <ons-icon icon="fa-list-alt" class="icon">
+          </ons-icon>
+        </ons-toolbar-button>
+  </div></ons-toolbar>
+
+<ons-list style="margin: -1px 0">
+
+<ons-list-item style="margin-top: 20px">
+  <input type="search" class="search-input" ng-model="secSearch"></input>
+ </ons-list-item>
+
+  <ons-list-item class="chapter" ng-repeat="section in sections | filter:secSearch" 
+                                 ui-sref="saba.home.sec({sId: section.s_id})">
+    <ons-row align="center">
+      <ons-col width="60px">
+        <div>
+          <img class="thumbnails" 
+               ng-src="cdvfile://localhost/persistent/sabamestari/.images/sabamestari/{{section.image_name}}"
+               fallback-src="http://sabamestariadmin.org/data/{{section.image_name}}">
+        </div>
+      </ons-col>
+      <ons-col class="chapter-title">
+        <div class="list-name"> {{ section.title }} </div>
+      </ons-col>
+    </ons-row>
+  </ons-list-item>
+
+  <ons-list-item ng-show="{{ sections == undefined}}" class="chapter" ng-repeat="section in backupSections | filter:secSearch" 
+                                 ui-sref="saba.home.sec({sId: section.s_id})">
+    <ons-row align="center">
+      <ons-col width="60px">
+        <div>
+          <img class="thumbnails" 
+               ng-src="http://sabamestariadmin.org/data/{{section.image_name}}"
+               fallback-src="http://sabamestariadmin.org/data/{{section.image_name}}">
+        </div>
+      </ons-col>
+      <ons-col class="chapter-title">
+        <div class="list-name"> {{ section.title }} </div>
+      </ons-col>
+    </ons-row>
+  </ons-list-item>
+
+</ons-list>
+
+</ons-page>
+</ons-navigator>
+
+
