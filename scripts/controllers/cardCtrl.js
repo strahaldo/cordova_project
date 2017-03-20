@@ -45,7 +45,7 @@ app.controller('cardCtrl', ['$scope',
       $scope.status = "404";
     });
 
-    var backupData = $http.get('http://sabamestariadmin.org/json_files/sabamestari/saba_cards.php').then(function(success) {
+    var backupData = $http.get('/* URL */').then(function(success) {
       console.log(success.data);
        var backupCards = success.data;
        $scope.backupCard = $filterData.filterByUrlCardId(backupCards, parseInt($stateParams.cId))[0];
@@ -55,7 +55,7 @@ app.controller('cardCtrl', ['$scope',
     $scope.backupimgs = [];
 
 
-    var backupImages = $http.get('http://sabamestariadmin.org/json_files/sabamestari/saba_images.php').then(function(success) {
+    var backupImages = $http.get('/* URL */').then(function(success) {
       var backupImages = success.data;
       angular.forEach(backupImages, function(value, key) {
         if (value.c_id === parseInt($stateParams.cId)) {
